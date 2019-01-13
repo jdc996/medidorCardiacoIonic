@@ -1,0 +1,48 @@
+<!--
+  Generated template for the MedidorCardiacoPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+<ion-header>
+  <ion-navbar hideBackButton=true>
+      <button ion-button menuToggle >
+          <ion-icon name='menu'></ion-icon>
+        </button>
+    <ion-buttons end>
+      <button ion-button (click)="conectar()" [disabled]="!isEnabled">
+        Conectar
+      </button>
+      <button ion-button (click)="disconnectBtn()" [disabled]="!isEnabled">
+        Desconectar
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+  <div style="text-align: center; padding-bottom: 20px">
+    <p class="medicion" style="font-size: 40px; text-align: center;font-family: garamond">{{medicionCardiaca}}</p>
+  </div>
+  <div padding style="text-align: center">
+    <button ion-button (click)="selectDevice()" block>
+      Select device
+    </button>
+    
+  </div>
+  <div *ngIf="isConnected">
+    <p style="text-align:center">CONNECTED TO {{device.id}} </p>
+  </div>
+  <div *ngIf="!isConnected">
+    <p style="text-align: center"> NOT DEVICE CONNECTED </p>
+  </div>
+
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <p>{{ statusMessage }}</p>
+  </ion-toolbar>
+</ion-footer>

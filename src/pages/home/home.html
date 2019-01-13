@@ -1,14 +1,27 @@
+
 <ion-header>
   <ion-navbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
+    <ion-title>HOME</ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+<ion-content >
+  <div padding >
+    <p style="font-size: 28px; text-align: center;font-family: garamond">HEARTH RATE DIAGNOSIS</p>
+  </div>
+  <ion-list inset>
+    <ion-item>
+      <ion-label floating>Document </ion-label>
+      <ion-input type="number" [(ngModel)]="documento" (ionChange)="enableDiseable(documento)"></ion-input>
+    </ion-item>
+  </ion-list>
+  <div padding>
+    <!-- Los nombres de los botones se cambian de orden por error en la traduccion -->
+      <button ion-button color="primary" block (click)="signIn(documento)" [disabled]="!isEnabled">Log In</button>
+      <button ion-button color="primary" block (click)="loguear()">Sign In</button>
+    </div>
+
 </ion-content>
+<ion-footer>
+
+</ion-footer>

@@ -1,0 +1,50 @@
+<!--
+  Generated template for the ObtenerDiagnosticoPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar hideBackButton="true">
+      <button ion-button menuToggle >
+          <ion-icon name='menu'></ion-icon>
+      </button>
+    <ion-title>ObtenerDiagnostico</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+ <div style="text-align: center; padding-bottom: 20px">
+  <p class="medicion" style="font-size: 23px; text-align: center;font-family: garamond" *ngIf="diagnosis">
+    First Analysis: {{analisis[0]}}
+  </p>
+  <p class="medicion" style="font-size: 23px; text-align: center;font-family: garamond" *ngIf="diagnosis">
+    Second Analysis: {{analisis[1]}}
+  </p>
+  <p class="medicion" style="font-size: 23px; text-align: center;font-family: garamond" *ngIf="diagnosis">
+    Third Analysis: {{analisis[2]}}
+  </p>
+  <p class="medicion" style="font-size: 23px; text-align: center;font-family: garamond" *ngIf="diagnosis">
+    Diagnosis: {{analisis[3]}}
+  </p>
+ </div>
+ <div style="text-align: center; ">
+  <p class="medicion" style="font-size: 16px; text-align: center;font-family: garamond" *ngIf="diagnosis">
+    Date: {{diagnosis.date}}
+  </p>
+ </div>
+ <div style="text-align: center;">
+    <button ion-button (click)="getDiagnostico()">
+      Get diagnosis
+    </button>
+  </div>
+  
+ <div style="text-align: center;">
+  <button ion-button (click)="makeDiagnostico()">
+    Make Diagnosis
+  </button>
+</div>
+</ion-content>

@@ -6,24 +6,54 @@ import { StatusBar } from '@ionic-native/status-bar';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
+import { MedidorCardiacoPage } from '../pages/medidor-cardiaco/medidor-cardiaco';
+import { HttpModule } from '@angular/http';
+import { HttpClientModule, HttpEventType } from '@angular/common/http';
+import { PacienteService } from '../services/paciente.services';
+import { BLE } from '@ionic-native/ble';
+import { EscanerBluetoothPage } from '../pages/escaner-bluetooth/escaner-bluetooth';
+import { HTTP } from '@ionic-native/http';
+import { BackgroundMode } from '@ionic-native/background-mode';
+import { ObtenerDiagnosticoPage } from '../pages/obtener-diagnostico/obtener-diagnostico';
+import { BluetoothService } from '../services/bluetooth.service';
+import { LocalNotifications } from '@ionic-native/local-notifications';
+import { LoginPage } from '../pages/login/login';
+
 
 @NgModule({
   declarations: [
     MyApp,
-    HomePage
+    HomePage,
+    MedidorCardiacoPage,
+    EscanerBluetoothPage,
+    ObtenerDiagnosticoPage,
+    LoginPage
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    HttpModule,
+    HttpClientModule,
+    IonicModule.forRoot(MyApp),
+    
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage
+    HomePage,
+    MedidorCardiacoPage,
+    EscanerBluetoothPage,
+    ObtenerDiagnosticoPage,
+    LoginPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
+    PacienteService,
+    BLE,
+    HTTP,
+    BackgroundMode,
+    BluetoothService,
+    LocalNotifications,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
