@@ -9,7 +9,7 @@ import { Events, AlertController } from "ionic-angular";
 import { isPresent } from "ionic-angular/umd/util/util";
 import { LocalNotifications } from "@ionic-native/local-notifications";
 
-const urlDir="http://192.168.0.7:4040";
+const urlDir="http://54.207.255.227:4040";
 @Injectable()
 export class PacienteService {
     cordova: any;
@@ -70,7 +70,7 @@ export class PacienteService {
        return this.http.get(urlDir+'/getPatients?document='+documento)
      }
 
-    postPatient(documento,firstName,lastName,age,weight,height){
+    postPatient(documento,firstName,lastName,age,weight,height,mail,phone,address){
         let headersnative= {
             'Content-Type': 'application/json'
         }
@@ -81,7 +81,10 @@ export class PacienteService {
         "lastname":lastName,
         "age":age,
         "weight":weight,
-        "height":height},
+        "height":height,
+        "mail":mail,
+        "phone":phone,
+        "address":address},
         headersnative)
     }
 

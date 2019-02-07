@@ -134,6 +134,7 @@ export class MedidorCardiacoPage {
     this.setIsConnect(this.device);
     this.setStatus('Disconnected')
     this.showAlert('Disconnected', 'The peripheral unexpectedly disconnected')
+    
   }
   onConnected(peripheral) {
     this.peripheral = peripheral;

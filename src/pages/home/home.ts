@@ -65,7 +65,7 @@ loguear(){
     
     },(error)=>{
       //alert("Error Loging In:" + error)
-      this.showAlert("Error Loggin","Error to loggin in "+error)
+      this.showAlert("Error Sign In","Error to Sign in "+error)
     });
 }
 

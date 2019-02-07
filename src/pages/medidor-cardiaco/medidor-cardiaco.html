@@ -12,10 +12,10 @@
         </button>
     <ion-buttons end>
       <button ion-button (click)="conectar()" [disabled]="!isEnabled">
-        Conectar
+        Connect
       </button>
-      <button ion-button (click)="disconnectBtn()" [disabled]="!isEnabled">
-        Desconectar
+      <button ion-button (click)="disconnectBtn()" [disabled]="!isConnected">
+        Disconnect
       </button>
     </ion-buttons>
   </ion-navbar>

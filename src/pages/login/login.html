@@ -40,8 +40,20 @@
             <ion-label floating>Height</ion-label>
             <ion-input type="number" [(ngModel)]="height"></ion-input>
         </ion-item>
+        <ion-item>
+            <ion-label floating>Mail</ion-label>
+            <ion-input type="text" [(ngModel)]="mail"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label floating>Phone</ion-label>
+            <ion-input type="number" [(ngModel)]="phone"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label floating>Address</ion-label>
+            <ion-input type="text" [(ngModel)]="address"></ion-input>
+        </ion-item>
       </ion-list>
 
-      <button ion-button color="primary" block (click)="createUser(documento,firstName,lastName,age,weight,height)">Create Patient</button>
+      <button ion-button color="primary" block (click)="createUser(documento,firstName,lastName,age,weight,height,mail,phone,address)">Create Patient</button>
 
 </ion-content>

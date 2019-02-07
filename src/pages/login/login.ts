@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, AlertController, MenuController } from 'ionic-angular';
 import { PacienteService } from '../../services/paciente.services';
 
 /**
@@ -16,16 +16,20 @@ import { PacienteService } from '../../services/paciente.services';
 })
 export class LoginPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public alertCtrl:AlertController,public pacienteService:PacienteService) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public alertCtrl:AlertController,public pacienteService:PacienteService,
+    private menu: MenuController) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad LoginPage');
   }
+  ionViewDidEnter(){
+    this.menu.swipeEnable(false);
+  }
   
-  createUser(documento,firstName,lastName,age,weight,height){
-    if(documento && firstName && lastName && age && weight && height){
-      this.pacienteService.postPatient(documento,firstName,lastName,age,weight,height).then((res)=>{      
+  createUser(documento,firstName,lastName,age,weight,height,mail,phone,address){
+    if(documento && firstName && lastName && age && weight && height && mail && phone && address){
+      this.pacienteService.postPatient(documento,firstName,lastName,age,weight,height,mail,phone,address).then((res)=>{      
       alert("Patient was created");
       this.navCtrl.pop();
     }).catch((error)=>{
