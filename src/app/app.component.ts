@@ -7,7 +7,7 @@ import { BackgroundMode } from '@ionic-native/background-mode';
 import { HomePage } from '../pages/home/home';
 import { MedidorCardiacoPage } from '../pages/medidor-cardiaco/medidor-cardiaco';
 import { ObtenerDiagnosticoPage } from '../pages/obtener-diagnostico/obtener-diagnostico';
-declare var cordova: any;
+
 @Component({
   templateUrl: 'app.html'
 })
@@ -18,8 +18,11 @@ export class MyApp {
   pages: Array<{title: string, component: any}>;
   
   
-  constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen,backgroundMode:BackgroundMode) {
+  constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen,
+    backgroundMode:BackgroundMode, 
+    ) {
     platform.ready().then(() => {
+      
       
 
       // Okay, so the platform is ready and our plugins are available.
@@ -29,6 +32,9 @@ export class MyApp {
       backgroundMode.enable();
       backgroundMode.excludeFromTaskList();
       backgroundMode.overrideBackButton();
+      
+      
+
       this.pages = [
         { title: 'Home', component: HomePage },
         { title: 'Medidor cardiaco', component: MedidorCardiacoPage },

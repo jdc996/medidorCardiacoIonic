@@ -7,6 +7,8 @@ import { ToastController } from 'ionic-angular';
 import { MedidorCardiacoPage } from '../medidor-cardiaco/medidor-cardiaco';
 import { BluetoothService } from '../../services/bluetooth.service';
 
+const HEART_RATE_SERVICE='180D';
+
 /**
  * Generated class for the EscanerBluetoothPage page.
  *
@@ -44,7 +46,7 @@ export class EscanerBluetoothPage {
     this.setStatus('Scanning for Bluetooth LE Devices');
     this.devices = [];  // clear list
 
-    this.ble.scan([], 15).subscribe(
+    this.ble.scan([HEART_RATE_SERVICE], 15).subscribe(
       device => this.onDeviceDiscovered(device), 
       error => this.scanError(error)
     );

@@ -13,11 +13,12 @@ import { PacienteService } from '../services/paciente.services';
 import { BLE } from '@ionic-native/ble';
 import { EscanerBluetoothPage } from '../pages/escaner-bluetooth/escaner-bluetooth';
 import { HTTP } from '@ionic-native/http';
-import { BackgroundMode } from '@ionic-native/background-mode';
 import { ObtenerDiagnosticoPage } from '../pages/obtener-diagnostico/obtener-diagnostico';
 import { BluetoothService } from '../services/bluetooth.service';
 import { LocalNotifications } from '@ionic-native/local-notifications';
 import { LoginPage } from '../pages/login/login';
+import { AppCenterCrashes } from '@ionic-native/app-center-crashes/ngx';
+import { BackgroundMode } from '@ionic-native/background-mode';
 
 
 @NgModule({
@@ -54,6 +55,7 @@ import { LoginPage } from '../pages/login/login';
     BackgroundMode,
     BluetoothService,
     LocalNotifications,
+    AppCenterCrashes,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
